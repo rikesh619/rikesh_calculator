@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/input_num"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:textSize="50sp"
+        android:layout_marginEnd="25dp"
+        android:textColor="@color/input_num"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/output_num"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:textSize="30sp"
+        android:textColor="@color/output_num"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/history_btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/history_ic"
+            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/landscape_btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/landscape_ic"
+            android:layout_marginStart="15dp"
+            app:layout_constraintStart_toEndOf="@+id/history_btn"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="25dp"
+            android:src="@mipmap/back_ic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/app_bone"
+        android:layout_marginTop="15dp"
+        android:layout_margin="18dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_fact_btn"
+                android:layout_width="70dp"
+                android:layout_height="45dp"
+                android:background="@drawable/landscapae_btn"
+                android:textSize="20dp"
+                android:text="fact"
+                android:textAllCaps="false"
+                android:layout_marginStart="25dp"
+                android:fontFamily="@font/source_serif_pro"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_rad"
+                android:layout_width="70dp"
+                android:layout_height="45dp"
+                android:background="@drawable/landscapae_btn"
+                android:text="Rad"
+                android:textSize="20dp"
+                android:layout_marginStart="25dp"
+                android:fontFamily="@font/source_serif_pro"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_root"
+                android:layout_width="70dp"
+                android:layout_height="45dp"
+                android:background="@drawable/landscapae_btn"
+                android:text="√"
+                android:textSize="20dp"
+                android:layout_marginStart="25dp"
+                android:fontFamily="@font/sourceserifpro_semibold"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_clear"
+                android:layout_width="70dp"
+                android:layout_height="45dp"
+                android:background="@drawable/landscapae_btn"
+                android:text="C"
+                android:textSize="20dp"
+                android:layout_marginStart="25dp"
+                android:fontFamily="@font/sourceserifpro_semibold"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_bracket_left"
+                android:layout_width="70dp"
+                android:layout_height="45dp"
+                android:background="@drawable/landscapae_btn"
+                android:text="("
+                android:textSize="20sp"
+                android:layout_marginStart="25dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_bracket_right"
+                android:layout_width="70dp"
+                android:layout_height="45dp"
+                android:background="@drawable/landscapae_btn"
+                android:textSize="20sp"
+                android:text=")"
+                android:layout_marginStart="25dp"/>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_division"
+                android:layout_width="70dp"
+                android:layout_height="45dp"
+                android:background="@drawable/landscapae_btn"
+                android:textSize="20sp"
+                android:text="÷"
+                android:layout_marginStart="25dp"/>
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_sin"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:background="@drawable/landscapae_btn"
+            android:text="sin"
+            android:textSize="20dp"
+            android:textAllCaps="false"
+            android:layout_marginStart="25dp"
+            android:fontFamily="@font/source_serif_pro"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_cos"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:background="@drawable/landscapae_btn"
+            android:text="cos"
+            android:textSize="20dp"
+            android:textAllCaps="false"
+            android:layout_marginStart="25dp"
+            android:fontFamily="@font/source_serif_pro"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_tan"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:background="@drawable/landscapae_btn"
+            android:text="tan"
+            android:textSize="20dp"
+            android:textAllCaps="false"
+            android:layout_marginStart="25dp"
+            android:fontFamily="@font/source_serif_pro"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_7"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:background="@drawable/landscapae_btn"
+            android:text="7"
+            android:textSize="20dp"
+            android:layout_marginStart="25dp"
+            android:fontFamily="@font/sourceserifpro_semibold"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_8"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:background="@drawable/landscapae_btn"
+            android:text="8"
+            android:textSize="20sp"
+            android:fontFamily="@font/sourceserifpro_semibold"
+            android:layout_marginStart="25dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_9"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:background="@drawable/landscapae_btn"
+            android:textSize="20sp"
+            android:text="9"
+            android:fontFamily="@font/sourceserifpro_semibold"
+            android:layout_marginStart="25dp"/>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_multiply"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:background="@drawable/landscapae_btn"
+            android:textSize="20sp"
+            android:fontFamily="@font/sourceserifpro_semibold"
+            android:text="×"
+            android:layout_marginStart="25dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_sin_1"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:background="@drawable/landscapae_btn"
+            android:text="@string/sin_1"
+            android:textSize="20dp"
+            android:textAllCaps="false"
+            android:layout_marginStart="25dp"
+            android:fontFamily="@font/source_serif_pro"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_cos_1"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:background="@drawable/landscapae_btn"
+            android:text="@string/cos_1"
+            android:textSize="20dp"
+            android:textAllCaps="false"
+            android:layout_marginStart="25dp"
+            android:fontFamily="@font/source_serif_pro"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_tan_1"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:background="@drawable/landscapae_btn"
+            android:text="@string/tan_1"
+            android:textSize="20dp"
+            android:textAllCaps="false"
+            android:layout_marginStart="25dp"
+            android:fontFamily="@font/source_serif_pro"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_4"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:background="@drawable/landscapae_btn"
+            android:text="4"
+            android:textSize="20dp"
+            android:layout_marginStart="25dp"
+            android:fontFamily="@font/sourceserifpro_semibold"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_5"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:background="@drawable/landscapae_btn"
+            android:text="5"
+            android:textSize="20sp"
+            android:fontFamily="@font/sourceserifpro_semibold"
+            android:layout_marginStart="25dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_6"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:background="@drawable/landscapae_btn"
+            android:textSize="20sp"
+            android:fontFamily="@font/sourceserifpro_semibold"
+            android:text="6"
+            android:layout_marginStart="25dp"/>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_substraction"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:background="@drawable/landscapae_btn"
+            android:textSize="20sp"
+            android:fontFamily="@font/sourceserifpro_semibold"
+            android:text="-"
+            android:layout_marginStart="25dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_1_divide_x"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:background="@drawable/landscapae_btn"
+            android:text="1 / x"
+            android:textSize="20dp"
+            android:textAllCaps="false"
+            android:layout_marginStart="25dp"
+            android:fontFamily="@font/source_serif_pro"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_x_power_2"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:background="@drawable/landscapae_btn"
+            android:text="x²"
+            android:textSize="20dp"
+            android:textAllCaps="false"
+            android:layout_marginStart="25dp"
+            android:fontFamily="@font/source_serif_pro"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_x_power_y"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:background="@drawable/landscapae_btn"
+            android:text="xʸ"
+            android:textSize="20dp"
+            android:textAllCaps="false"
+            android:layout_marginStart="25dp"
+            android:fontFamily="@font/source_serif_pro"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_1"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:background="@drawable/landscapae_btn"
+            android:text="1"
+            android:textSize="20dp"
+            android:layout_marginStart="25dp"
+            android:fontFamily="@font/sourceserifpro_semibold"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_2"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:background="@drawable/landscapae_btn"
+            android:text="2"
+            android:textSize="20sp"
+            android:fontFamily="@font/sourceserifpro_semibold"
+            android:layout_marginStart="25dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_3"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:background="@drawable/landscapae_btn"
+            android:textSize="20sp"
+            android:text="3"
+            android:fontFamily="@font/sourceserifpro_semibold"
+            android:layout_marginStart="25dp"/>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_addition"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:background="@drawable/landscapae_btn"
+            android:textSize="20sp"
+            android:fontFamily="@font/sourceserifpro_semibold"
+            android:text="+"
+            android:layout_marginStart="25dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_x"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:background="@drawable/landscapae_btn"
+            android:text="|x|"
+            android:textSize="20dp"
+            android:textAllCaps="false"
+            android:layout_marginStart="25dp"
+            android:fontFamily="@font/source_serif_pro"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_pie"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:background="@drawable/landscapae_btn"
+            android:text="π"
+            android:textSize="20dp"
+            android:textAllCaps="false"
+            android:layout_marginStart="25dp"
+            android:fontFamily="@font/source_serif_pro"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_e"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:background="@drawable/landscapae_btn"
+            android:text="e"
+            android:textSize="20dp"
+            android:textAllCaps="false"
+            android:layout_marginStart="25dp"
+            android:fontFamily="@font/source_serif_pro"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_percentage"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:background="@drawable/landscapae_btn"
+            android:text="%"
+            android:textSize="20dp"
+            android:layout_marginStart="25dp"
+            android:fontFamily="@font/sourceserifpro_semibold"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_0"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:background="@drawable/landscapae_btn"
+            android:text="0"
+            android:textSize="25sp"
+            android:fontFamily="@font/sourceserifpro_semibold"
+            android:layout_marginStart="25dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_dot"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:background="@drawable/landscapae_btn"
+            android:textSize="20sp"
+            android:fontFamily="@font/sourceserifpro_semibold"
+            android:text="."
+            android:layout_marginStart="25dp"/>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_equal"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="25dp"
+            android:background="@drawable/landscapae_btn"
+            android:text="="
+            android:textSize="20sp"
+            android:fontFamily="@font/sourceserifpro_semibold"/>
+    </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

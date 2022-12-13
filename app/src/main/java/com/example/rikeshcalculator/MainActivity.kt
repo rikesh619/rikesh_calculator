@@ -1,16 +1,23 @@
 package com.example.rikeshcalculator
 
+import android.annotation.SuppressLint
+import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.renderscript.Double4
+import android.widget.TextView
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.view.*
 import org.mariuszgromada.math.mxparser.Expression
+import org.mariuszgromada.math.mxparser.mathcollection.MathFunctions.factorial
 import java.lang.Exception
 import java.text.DecimalFormat
 
+@Suppress("UNSAFE_CALL_ON_PARTIALLY_DEFINED_RESOURCE")
 class MainActivity : AppCompatActivity() {
+    var isPotrait = true
 
-    var check = 0
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -32,6 +39,8 @@ class MainActivity : AppCompatActivity() {
                 showresult()
             }
         }
+
+
 
         btn_bracket_left.setOnClickListener {
             input_num.text = addtoInputText("(")
@@ -109,7 +118,57 @@ class MainActivity : AppCompatActivity() {
             showresult()
         }
 
+        btn_x_power_2?.setOnClickListener {
+            val value:Double= input_num.text.toString().toDouble()
+            val r = value * value
+            output_num.text = r.toString()
+        }
+
+        btn_1_divide_x?.setOnClickListener {
+            input_num.text = addtoInputText("×" + "1" + "÷")
+        }
+
+        btn_pie?.setOnClickListener {
+            val value:Double= input_num.text.toString().toDouble()
+            val pie = 3.14159265359
+            val r = value * pie
+            input_num.text = addtoInputText("×" + "π")
+            output_num.text = r.toString()
+        }
+
+        btn_fact_btn?.setOnClickListener {
+            if (input_num.text.toString().isEmpty()){
+                Toast.makeText(this , "Please enter a valid number" , Toast.LENGTH_SHORT).show()
+            }else{
+                val value : Int = input_num.text.toString().toInt()
+                val fact : Int = factorial(value)
+                input_num.text = input_num.text.toString()
+                output_num.text = fact.toString()
+            }
+        }
+
+        btn_root?.setOnClickListener {
+           val str : String = input_num.text.toString()
+           val r = Math.sqrt(str.toDouble())
+           val result = r.toString()
+           output_num.text = result.toString()
+        }
+
+       
+
+
+
+        landscape_btn.setOnClickListener {
+            requestedOrientation = if (isPotrait){
+                ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE
+            }else{
+                ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT
+            }
+            isPotrait = !isPotrait
+        }
+
     }
+
 
     private fun showresult() {
         try {
@@ -135,4 +194,9 @@ class MainActivity : AppCompatActivity() {
     private fun addtoInputText(butttonValue : String) : String {
         return "${input_num.text}$butttonValue"
     }
+
+    private fun factorial(n:Int):Int{
+        return if (n==1 || n==0)1 else n* factorial(n-1)
+    }
+
 }

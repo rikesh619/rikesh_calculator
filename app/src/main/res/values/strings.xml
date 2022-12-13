@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Rikesh Calculator</string>
+    <string name="sin_1">sin<sup><small>-1</small></sup></string>
+    <string name="cos_1">cos<sup><small>-1</small></sup></string>
+    <string name="tan_1">tan<sup><small>-1</small></sup></string>
 </resources>

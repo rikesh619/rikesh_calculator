@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/RikeshCalculator/app/src/main/res/drawable/landscapae_btn.xml" value="0.144" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/RikeshCalculator/app/src/main/res/drawable/rounded_btn.xml" value="0.142" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/RikeshCalculator/app/src/main/res/font/source_serif_pro.xml" value="0.26296296296296295" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/RikeshCalculator/app/src/main/res/layout-land/activity_main.xml" value="0.1796875" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/RikeshCalculator/app/src/main/res/layout/activity_main.xml" value="0.25" />
       </map>
     </option>
